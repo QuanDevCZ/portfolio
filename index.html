@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quan Nguyen — AI builder</title>
+  <meta name="description" content="Quan Nguyen builds websites, web apps and automations with AI. Based in Mladá Boleslav, Czechia.">
+  <meta name="theme-color" content="#F5F5F5">
+  <meta property="og:title" content="Quan Nguyen — AI builder">
+  <meta property="og:description" content="Websites, web apps and automations — built fast, built to work.">
+  <meta property="og:image" content="assets/quan.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23111'/%3E%3Ccircle cx='24' cy='8' r='3' fill='%23FF5A00'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+  <!-- ============ HERO: split screen + project drum ============ -->
+  <header class="hero">
+    <div class="hero__intro">
+      <img class="avatar" src="assets/quan.jpg" alt="Portrait of Quan Nguyen" width="72" height="72">
+      <h1 class="hero__name">Quan Nguyen<span class="hero__role">AI builder</span></h1>
+
+      <p class="hero__lede">
+        An <span class="pill">AI builder</span> from <span class="pill pill--soft">Czechia</span>
+        making websites, web apps and automations that people actually use.
+      </p>
+
+      <p class="status"><span class="status__dot" aria-hidden="true"></span>Available for new projects</p>
+
+      <div class="hero__actions">
+        <a class="icon-btn" href="#work" aria-label="See all projects">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+        </a>
+        <a class="icon-btn" href="mailto:nguyenhonza1301@gmail.com?subject=Project%20enquiry" aria-label="Email Quan">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="drum" id="drum" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Selected projects — scroll, drag or use arrow keys">
+      <div class="drum__stage" id="drumStage">
+        <a class="dcard" href="https://quandevcz.github.io/Menu-saunaasia/" target="_blank" rel="noopener" style="--tint:#F6E7CF" data-name="Sauna Asia menu">
+          <span class="dcard__shot"><img src="assets/shots/sauna-asia.jpg" alt="Sauna Asia digital menu — category overview" loading="eager"></span>
+          <span class="dcard__meta"><span class="dcard__name">Sauna Asia menu</span><span class="dcard__tag">Website · live</span></span>
+        </a>
+        <article class="dcard dcard--dark" style="--tint:#1B1F3B" data-name="Night Racer">
+          <span class="dcard__shot"><img src="assets/shots/night-racer.jpg" alt="Night Racer start screen over a neon city circuit"></span>
+          <span class="dcard__meta"><span class="dcard__name">Night Racer</span><span class="dcard__tag">Game · in progress</span></span>
+        </article>
+        <a class="dcard" href="https://quandevcz.github.io/hand-gesture-instrument/" target="_blank" rel="noopener" style="--tint:#E4E9FF" data-name="chord-hands">
+          <span class="dcard__shot"><img src="assets/shots/chord-hands.jpg" alt="chord-hands start screen"></span>
+          <span class="dcard__meta"><span class="dcard__name">chord-hands</span><span class="dcard__tag">Web app · live</span></span>
+        </a>
+        <a class="dcard" href="https://quandevcz.github.io/forge/" target="_blank" rel="noopener" style="--tint:#FFE3D3" data-name="Forge">
+          <span class="dcard__shot"><img src="assets/shots/forge.jpg" alt="Forge training tracker — today view"></span>
+          <span class="dcard__meta"><span class="dcard__name">Forge</span><span class="dcard__tag">PWA · live</span></span>
+        </a>
+      </div>
+    </div>
+
+    <nav class="dots" id="dots" aria-label="Choose project"></nav>
+  </header>
+
+  <!-- ============ CARD COLUMN ============ -->
+  <main class="column">
+
+    <section class="card reveal" id="work">
+      <p class="label">/ all-projects</p>
+      <h2 class="card__title">Things I've built</h2>
+      <ul class="rows">
+        <li>
+          <a class="row" href="https://quandevcz.github.io/Menu-saunaasia/" target="_blank" rel="noopener">
+            <img class="row__thumb" src="assets/shots/sauna-asia.jpg" alt="" width="48" height="48">
+            <span class="row__body">
+              <span class="row__head">Sauna Asia menu <span class="tag">Website</span></span>
+              <span class="row__desc">QR digital menu for a real restaurant. Guests scan the code on the table and browse on their phone.</span>
+            </span>
+            <svg class="row__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+          </a>
+        </li>
+        <li>
+          <div class="row row--static">
+            <img class="row__thumb" src="assets/shots/night-racer.jpg" alt="" width="48" height="48">
+            <span class="row__body">
+              <span class="row__head">Night Racer <span class="tag">Game</span><span class="tag tag--wip">In progress</span></span>
+              <span class="row__desc">3D street racer in the browser. Procedural neon city, three AI rivals, every sound synthesized live. No asset files.</span>
+            </span>
+          </div>
+        </li>
+        <li>
+          <a class="row" href="https://quandevcz.github.io/hand-gesture-instrument/" target="_blank" rel="noopener">
+            <img class="row__thumb" src="assets/shots/chord-hands.jpg" alt="" width="48" height="48">
+            <span class="row__body">
+              <span class="row__head">chord-hands <span class="tag">Web app</span></span>
+              <span class="row__desc">Play chords with your hands in front of a webcam. Hand tracking plus Web Audio, zero dependencies.</span>
+            </span>
+            <svg class="row__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="row" href="https://quandevcz.github.io/forge/" target="_blank" rel="noopener">
+            <img class="row__thumb" src="assets/shots/forge.jpg" alt="" width="48" height="48">
+            <span class="row__body">
+              <span class="row__head">Forge <span class="tag">PWA</span></span>
+              <span class="row__desc">Training tracker for iPhone. Miss a session and it adds a penalty you have to pay back. I use it every day.</span>
+            </span>
+            <svg class="row__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card reveal">
+      <p class="label">/ services</p>
+      <h2 class="card__title">What I can build for you</h2>
+      <ul class="services">
+        <li>
+          <span class="services__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18"/></svg></span>
+          <span><strong>Websites</strong>A fast, good-looking site for your business, restaurant or project. Mobile first.</span>
+        </li>
+        <li>
+          <span class="services__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="3"/><path d="M11 18.5h2"/></svg></span>
+          <span><strong>Web apps</strong>Tools that run in the browser or install on a phone, like menus, trackers and dashboards.</span>
+        </li>
+        <li>
+          <span class="services__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+          <span><strong>Automations</strong>The boring, repeated parts of your week, handled by software and AI.</span>
+        </li>
+      </ul>
+      <p class="card__note">Prices on request. Tell me what you need and I'll come back with a plan.</p>
+    </section>
+
+    <section class="card reveal">
+      <p class="label">/ beyond-code</p>
+      <h2 class="card__title">Off the screen</h2>
+      <ul class="facts">
+        <li><span class="facts__k">Taekwondo</span><span class="facts__v">1st dan black belt. I train seven days a week.</span></li>
+        <li><span class="facts__k">Piano</span><span class="facts__v">Self-taught, working towards writing my own music.</span></li>
+        <li><span class="facts__k">Restaurant</span><span class="facts__v">After school I work in my family's restaurant. That's where the menu project came from.</span></li>
+        <li><span class="facts__k">School</span><span class="facts__v">Gymnázium student in Mladá Boleslav, graduating 2028.</span></li>
+      </ul>
+    </section>
+
+    <section class="card card--contact reveal" id="contact">
+      <p class="label">/ contact</p>
+      <h2 class="card__title">Got a project? Let's talk.</h2>
+      <p class="card__text">Write me a couple of sentences about what you need. I'll get back to you with questions or a plan.</p>
+      <a class="cta" href="mailto:nguyenhonza1301@gmail.com?subject=Project%20enquiry">
+        Email me
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </a>
+      <p class="cta__sub">nguyenhonza1301@gmail.com</p>
+
+      <ul class="socials">
+        <li><a href="https://github.com/QuanDevCZ" target="_blank" rel="noopener"><span>GitHub</span><span class="socials__h">@QuanDevCZ</span></a></li>
+        <!-- TODO: swap each <span class="socials__soon"> for an <a href> once the profile is live -->
+        <li><span class="socials__soon"><span>X</span><span class="socials__h">soon</span></span></li>
+        <li><span class="socials__soon"><span>LinkedIn</span><span class="socials__h">soon</span></span></li>
+      </ul>
+    </section>
+
+    <footer class="foot">
+      <span>© 2026 Quan Nguyen</span>
+      <span>Mladá Boleslav, Czechia</span>
+    </footer>
+  </main>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

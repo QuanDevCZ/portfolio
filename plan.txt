@@ -1,0 +1,69 @@
+PORTFOLIO — Quan Nguyen — plan
+Started 2026-10-16. Spec source: C:\Users\Dell\Desktop\inspiration\portfolio-2026-10-16\board.md (Direction section).
+
+GOAL
+Personal portfolio in English. Audience: small businesses / people who would pay a young AI-builder
+for a website, web app or automation. One goal: make them email Quan (nguyenhonza1301@gmail.com).
+
+REFERENCES COMBINED
+- gabrielbeaugonin.com -> hero: split screen, name/role left, scroll-wheel 3D drum of tinted project
+  cards right, dot indicator at the right edge.
+- adrien-ninet.com -> everything below the hero: centered 560px column of white rounded cards on
+  #F5F5F5, "/ mono" section labels, link rows with icon tile + tag pill + chevron, orange CTA.
+- Picked details: availability dot (danjavor.com), highlight pills in intro (eemonroy.com),
+  project list rows under the drum (jakub.kr / samuelkraft.com). No prices ("ask").
+
+CONTENT
+- Name: Quan Nguyen. Role: AI builder. Based in Mladá Boleslav, Czechia.
+- Photo: assets/quan.png (from Pictures\Screenshots\Screenshot 2026-10-05 222840.png).
+- Projects (4):
+  1. Night Racer — 3D browser street racer, procedural city, synthesized sound, 3 AI rivals.
+     NOT public yet (no repo, no URL as of 2026-10-16) -> card says "In progress", no link.
+  2. Sauna Asia menu — QR digital menu for a real restaurant. https://quandevcz.github.io/Menu-saunaasia/
+  3. chord-hands — webcam hand-gesture chord instrument. https://quandevcz.github.io/hand-gesture-instrument/
+  4. Forge — training tracker PWA for iPhone. https://quandevcz.github.io/forge/
+  (GitHub account was renamed WebJohn7 -> QuanDevCZ; old webjohn7.github.io URLs now 404.)
+- Services: Websites / Web apps / Automations — one line each, "Prices on request — just ask".
+- Beyond code: Taekwondo 1st dan black belt; self-taught piano (Jacob Collier fan); family restaurant.
+- Contact: orange "Email me" mailto with pre-filled subject; GitHub QuanDevCZ; Instagram, X,
+  LinkedIn = placeholders until Quan gives handles.
+
+DESIGN TOKENS
+bg #F5F5F5 · card #FFFFFF border #EBEBEB · ink #111111 · muted #8A8A8A · accent #FF5A00 (hover #E64F00)
+· green #22C55E · drum tints: Night Racer #1B1F3B, Sauna Asia #F6E7CF, chord-hands #E4E9FF, Forge #FFE3D3.
+Fonts (Google, free): Inter Tight 400/500/600, JetBrains Mono 400.
+
+TECH
+Static, zero dependencies, no build: index.html + style.css + main.js + assets/. Host on GitHub Pages
+(same as other projects) when Quan says so. No paid services.
+
+DRUM (own vanilla JS)
+- Cylinder: perspective on wrapper, items rotateX(-step*i) translateZ(r), list rotateX(step*pos).
+- Inputs -> one target position: wheel (only while hovering the drum; at first/last card the wheel
+  passes through to the page, so page scroll is never hijacked), pointer drag, arrow keys, dot clicks.
+- Animate with rAF toward target, easeOutCubic snap to nearest card. Cards beyond ±90° hidden,
+  opacity falls off with angle. Front card is a live link.
+- prefers-reduced-motion: no intro, instant moves.
+- Mobile (<860px): stacked layout, drum smaller; project rows below remain the full list.
+
+MOTION
+Intro: name fades in, then drum rises in (<=600ms). Cards below fade up on enter (IntersectionObserver).
+Hover lift 2px on rows/cards. Nothing else.
+
+STEPS
+1. plan.txt (this file).
+2. Screenshot the 3 live projects + Night Racer (local serve) for drum cards -> assets/shots/*.jpg.
+3. index.html / style.css / main.js.
+4. Verify in Chrome: desktop + phone width, drum wheel/drag/keys, no page-scroll hijack, links work.
+5. Report. Later (on Quan's OK): git init + GitHub repo + Pages, README, /ship.
+
+AVOID
+Dark/neon hacker look, glitch, gradient SaaS look, scroll hijacking, paid fonts, paid services.
+
+STATUS 2026-10-16
+Steps 1-4 done. Verified in Chrome: desktop hero + drum (wheel, keys, end-release to page scroll),
+card column, contact; 390px phone width (no horizontal scroll); no console errors.
+Changes vs plan: drum step 62deg / radius 1.1x card height (neighbours as slivers, like Gabriel);
+"scroll · drag" hint removed (overlapped cards); hero overflow clipped; easing made frame-rate
+independent. Local-time footer not used (not picked). IG/X/LinkedIn rows commented out in
+index.html until handles exist. Step 5 (repo + Pages + README + /ship) waits for Quan's OK.
