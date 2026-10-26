@@ -15,23 +15,34 @@ REFERENCES COMBINED
 
 CONTENT
 - Name: Quan Nguyen. Role: AI builder. Based in Mladá Boleslav, Czechia.
-- Photo: assets/quan.png (from Pictures\Screenshots\Screenshot 2026-10-05 222840.png).
+- Photo: assets/quan.jpg (2026-10-26: replaced with the night photo, cropped to head and shoulders, 480x480).
 - Projects (4):
   1. Night Racer — 3D browser street racer, procedural city, synthesized sound, 3 AI rivals.
      NOT public yet (no repo, no URL as of 2026-10-16) -> card says "In progress", no link.
-  2. Sauna Asia menu — QR digital menu for a real restaurant. https://quandevcz.github.io/Menu-saunaasia/
+  2. Restaurace Sauna Asia — 4-page website for the family restaurant (replaced the old "Sauna Asia menu"
+     row on 2026-10-26; that old Menu-saunaasia project is retired). https://quandevcz.github.io/saunaasia/
   3. chord-hands — webcam hand-gesture chord instrument. https://quandevcz.github.io/hand-gesture-instrument/
   4. Forge — training tracker PWA for iPhone. https://quandevcz.github.io/forge/
   (GitHub account was renamed WebJohn7 -> QuanDevCZ; old webjohn7.github.io URLs now 404.)
 - Services: Websites / Web apps / Automations — one line each, "Prices on request — just ask".
 - Beyond code: Taekwondo 1st dan black belt; self-taught piano (Jacob Collier fan); family restaurant.
-- Contact: orange "Email me" mailto with pre-filled subject; GitHub QuanDevCZ; Instagram, X,
+- Contact: black (was orange) "Email me" mailto with pre-filled subject; GitHub QuanDevCZ; Instagram, X,
   LinkedIn = placeholders until Quan gives handles.
 
-DESIGN TOKENS
-bg #F5F5F5 · card #FFFFFF border #EBEBEB · ink #111111 · muted #8A8A8A · accent #FF5A00 (hover #E64F00)
-· green #22C55E · drum tints: Night Racer #1B1F3B, Sauna Asia #F6E7CF, chord-hands #E4E9FF, Forge #FFE3D3.
-Fonts (Google, free): Inter Tight 400/500/600, JetBrains Mono 400.
+DESIGN TOKENS (2026-10-26: whole site moved to gabrielbeaugonin.com's design system, at Quan's request;
+the original Adrien-style tokens — orange accent, Inter Tight + JetBrains Mono, tinted drum cards — are retired)
+Read from his live CSS (/assets/index.*.css) and computed styles:
+- Colours, monochrome, no accent: bg #F6F6F6 · surface #FFFFFF · surface-2 #EAEAEA (drum cards) ·
+  hover #ECECEC · ink #1A1A1A · black #0A0A0A (CTA, active button) · grey #9F9F9F · line #EBEBEB.
+- Font: he uses Suisse Intl Book (paid) -> Inter 400 from Google Fonts (closest free). One weight only:
+  emphasis by colour (ink vs grey), never bold. No mono font.
+- Type scale (his rem = 10px at 1440 wide): h1 32px lh 1 · h2 24px lh 1.24 · h3 16px · small 14px.
+  Mobile h1/h2 18px. Name + grey role stacked; body copy at h2 size in grey with ink highlights.
+- Shapes: flat — no shadows, no borders. Icon buttons 58px white r16, hover/active = black circle.
+  Cards r32. Rows/inner tiles r16 on #F6F6F6.
+- Labels: "Projects:" style (small ink text with a colon), replacing the "/ mono" labels.
+- Counts/tags: grey text after the name, like his "Awwwards (13)", not pills.
+- Availability dot: ink, not green (monochrome).
 
 TECH
 Static, zero dependencies, no build: index.html + style.css + main.js + assets/. Host on GitHub Pages
@@ -67,3 +78,19 @@ Changes vs plan: drum step 62deg / radius 1.1x card height (neighbours as sliver
 "scroll · drag" hint removed (overlapped cards); hero overflow clipped; easing made frame-rate
 independent. Local-time footer not used (not picked). IG/X/LinkedIn rows commented out in
 index.html until handles exist. Step 5 (repo + Pages + README + /ship) waits for Quan's OK.
+
+STATUS 2026-10-26
+Design system switched to gabrielbeaugonin.com's (see DESIGN TOKENS). Verified in Chrome at desktop width:
+hero, drum, project rows, contact; no console errors. Labels now "Projects:" etc.; Night Racer tag merged
+to "(Game, in progress)"; socials row is flex so the GitHub handle fits. Phone width NOT re-checked
+(window resize failed) — superseded: checked at 390px later the same day, OK.
+
+CHANGE 2026-10-26 (Quan): hero drum removed
+Reason: hero split left/right while everything below sits in the centre column — inconsistent.
+- Deleted the 3D project drum + dot nav from the hero (HTML, its CSS, and all drum JS in main.js).
+  Projects now appear only as rows in the "Projects:" card (assets/shots still used there).
+- Hero = the About intro only, in a 600px centred column with the same 20px gutter as .column and
+  inset by the card padding (32px; 20px on phone), so hero text lines up with the card text below.
+- Hero is no longer full-height: top padding clamp(72px, 16vh, 180px) so the first card shows.
+- main.js now only does the intro fade-in + scroll reveals.
+(The DRUM section above is historical.)

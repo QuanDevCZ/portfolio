@@ -6,7 +6,7 @@ Personal portfolio of Quan Nguyen, an AI builder from Czechia who makes websites
 
 ## What's on it
 
-- **Hero:** a short intro on the left. On the right is a 3D "drum" of project cards that you turn with the mouse wheel (only while hovering it), drag, arrow keys or the dots. At the first and last card the wheel goes back to scrolling the page.
+- **Hero:** a short intro (photo, name, one line, availability, two buttons) centred on the same column as the cards below, aligned with the text inside them.
 - **Cards:** all projects, services, a short "beyond code" section and contact.
 
 ## Run locally
@@ -21,7 +21,7 @@ Opening `index.html` straight from disk works too.
 
 ## Notes
 
-- Fonts: Inter Tight and JetBrains Mono from Google Fonts.
-- Project screenshots are in `assets/shots/`. Drum card tints are set inline on each `.dcard` in `index.html`.
+- Font: Inter 400 from Google Fonts (free stand-in for Suisse Intl).
+- Project screenshots are in `assets/shots/`. Colours, type and radii are tokens at the top of `style.css`.
 - The X and LinkedIn rows are placeholders. Swap each `.socials__soon` span for a link once the profiles are live.
-- Design references: [adrien-ninet.com](https://adrien-ninet.com/) (card column) and [gabrielbeaugonin.com](https://www.gabrielbeaugonin.com/) (drum hero). The code is original.
+- Design references: [adrien-ninet.com](https://adrien-ninet.com/) (card column) and [gabrielbeaugonin.com](https://www.gabrielbeaugonin.com/) (design system: font, colours, shapes). The code is original.
