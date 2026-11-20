@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quan Nguyen · AI Engineer</title>
+  <meta name="description" content="Quan Nguyen builds apps, websites and tools with Claude Code and ships them.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Reusable icons -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.4A8.5 8.5 0 1 1 21 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M4 4h4.5L20 20h-4.5zM20 4l-6.6 7.2M10.6 12.8L4 20"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.5 7l8.5 6 8.5-6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></symbol>
+  </svg>
+
+  <main class="page">
+    <!-- 1–4: Hero -->
+    <section class="card hero reveal">
+      <img class="avatar" src="assets/profile.jpg" alt="Quan Nguyen" width="96" height="96">
+      <h1 class="name">Quan Nguyen</h1>
+      <p class="status">AI Engineer</p>
+
+      <div class="actions">
+        <button class="tile morph about-btn" type="button" aria-label="About" aria-expanded="false" aria-controls="about-panel">
+          <svg class="icon ic-a"><use href="#i-user"/></svg>
+          <svg class="icon ic-close"><use href="#i-close"/></svg>
+        </button>
+        <button class="tile morph contact" type="button" aria-label="Socials and contact" aria-expanded="false" aria-controls="socials-row">
+          <svg class="icon ic-a"><use href="#i-chat"/></svg>
+          <svg class="icon ic-close"><use href="#i-close"/></svg>
+        </button>
+        <div class="socials-row" id="socials-row">
+          <div class="socials-inner">
+            <a class="tile social" style="--i:0" href="#" aria-label="Instagram" tabindex="-1"><svg class="icon"><use href="#i-instagram"/></svg></a>
+            <a class="tile social" style="--i:1" href="#" aria-label="X" tabindex="-1"><svg class="icon"><use href="#i-x"/></svg></a>
+            <a class="tile social" style="--i:2" href="https://github.com/QuanDevCZ" target="_blank" rel="noopener" aria-label="GitHub" tabindex="-1"><svg class="icon"><use href="#i-github"/></svg></a>
+            <a class="tile social" style="--i:3" href="mailto:nguyenhonza1301@gmail.com" aria-label="Email" tabindex="-1"><svg class="icon"><use href="#i-mail"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-panel" id="about-panel" aria-hidden="true">
+        <div class="about-inner">
+          <div class="about-body">
+            <p class="about-lead rv" style="--i:0"><span class="hl">AI builder</span> from Czechia. I turn ideas into apps, websites and tools with <span class="hl">Claude Code</span>, and I ship them.</p>
+            <p class="about-lead rv" style="--i:1">I'm a student. After school I work in my family's restaurant, so I build in <span class="hl">small, finished steps</span>.</p>
+            <p class="about-label rv" style="--i:2">Stack:</p>
+            <ul class="about-list">
+              <li class="rv" style="--i:3"><span class="hl">Claude Code</span></li>
+              <li class="rv" style="--i:4"><span class="hl">JavaScript</span></li>
+              <li class="rv" style="--i:5"><span class="hl">Three.js</span> (3 projects)</li>
+              <li class="rv" style="--i:6"><span class="hl">Web Audio</span> (2 projects)</li>
+            </ul>
+            <p class="about-lead rv" style="--i:7">Open to <span class="hl">small website and app projects</span>. Based in <span class="hl">Mladá Boleslav, Czechia</span>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5: Currently building -->
+    <section class="card reveal">
+      <h2 class="h2">Currently building</h2>
+      <a class="row" href="https://github.com/QuanDevCZ/cognispace" target="_blank" rel="noopener">
+        <span class="thumb ph"></span>
+        <span class="row-body"><span class="row-title">Cognispace</span><span class="row-desc">Planner, focus timer and a 3D map of how modern AI works.</span></span>
+        <svg class="icon arrow"><use href="#i-arrow"/></svg>
+      </a>
+      <div class="row is-static">
+        <span class="thumb ph"></span>
+        <span class="row-body"><span class="row-title">Jarvis</span><span class="row-desc">A personal AI assistant that runs on my own computer.</span></span>
+      </div>
+    </section>
+
+    <!-- 6: Recent projects -->
+    <section class="reveal">
+      <div class="section-head">
+        <h2 class="h2">Recent projects</h2>
+        <a class="pill" href="https://github.com/QuanDevCZ" target="_blank" rel="noopener">See all</a>
+      </div>
+      <div class="grid">
+        <a class="card project" href="https://quandevcz.github.io/saunaasia/" target="_blank" rel="noopener"><span class="shot ph"></span><span class="row-title">Sauna Asia</span><span class="row-desc">A new website for my family's restaurant. Menu, sauna and contact.</span></a>
+        <a class="card project" href="https://quandevcz.github.io/elektrolab/" target="_blank" rel="noopener"><span class="shot ph"></span><span class="row-title">Elektrolab</span><span class="row-desc">3D electrostatics app for my physics class, in Czech.</span></a>
+        <a class="card project" href="https://quandevcz.github.io/hand-gesture-instrument/" target="_blank" rel="noopener"><span class="shot ph"></span><span class="row-title">Chord Hands</span><span class="row-desc">Play chords with your hands through the webcam.</span></a>
+        <a class="card project" href="https://quandevcz.github.io/night-racer/" target="_blank" rel="noopener"><span class="shot ph"></span><span class="row-title">Night Racer</span><span class="row-desc">A 3D racing game through a night city, right in the browser.</span></a>
+      </div>
+    </section>
+
+    <!-- 7: Get in touch -->
+    <section class="card reveal" id="contact">
+      <h2 class="h2">Get in touch</h2>
+      <p class="lead">Have a small website or app in mind? Write me.</p>
+      <form class="form" id="contact-form" novalidate>
+        <div class="form-row">
+          <label>Name<input type="text" name="name" placeholder="Full name" required></label>
+          <label>Email<input type="email" name="email" placeholder="you@mail.com" required></label>
+        </div>
+        <label>Message<textarea name="message" rows="4" placeholder="Tell me about it…" required></textarea></label>
+        <button class="btn" type="submit">Send message</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- 8: Footer -->
+  <footer class="footer reveal">
+    <p class="foot-name">Quan Nguyen</p>
+    <p class="foot-tag">AI builder. Apps, sites and tools, shipped.</p>
+    <nav class="socials" aria-label="Social links">
+      <a href="#" aria-label="Instagram"><svg class="icon"><use href="#i-instagram"/></svg></a>
+      <a href="#" aria-label="X"><svg class="icon"><use href="#i-x"/></svg></a>
+      <a href="https://github.com/QuanDevCZ" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon"><use href="#i-github"/></svg></a>
+      <a href="mailto:nguyenhonza1301@gmail.com" aria-label="Email"><svg class="icon"><use href="#i-mail"/></svg></a>
+    </nav>
+    <p class="foot-small">Built by Quan Nguyen</p>
+    <p class="foot-small">© 2026 Quan Nguyen. All rights reserved.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
