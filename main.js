@@ -39,10 +39,38 @@ morphs.forEach(m => {
   });
 });
 
-// Contact form: a static site can't send mail, so open the visitor's email app
-// with the message already filled in.
+// Contact form: sent through Web3Forms (free, delivers to my Gmail), so the
+// visitor stays on the page. Until the key is set, or if the request fails,
+// fall back to opening the visitor's email app with the message filled in.
+const WEB3FORMS_KEY = '210d36cd-b5fd-4887-b3a3-edde5bdd6c72'; // public by design: only delivers to my inbox
 const CONTACT_EMAIL = 'nguyenhonza1301@gmail.com';
 const form = document.getElementById('contact-form');
+const statusEl = form.querySelector('.form-status');
+const submitBtn = form.querySelector('button[type="submit"]');
+
+function setStatus(text, ok = false) {
+  statusEl.textContent = text;
+  statusEl.classList.toggle('ok', ok);
+}
+
+async function sendViaWeb3Forms(f) {
+  const { name, email, message, botcheck } = f.elements;
+  const res = await fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify({
+      access_key: WEB3FORMS_KEY,
+      subject: `Portfolio message from ${name.value.trim()}`,
+      from_name: 'Portfolio',
+      name: name.value.trim(),
+      email: email.value.trim(),
+      message: message.value.trim(),
+      botcheck: botcheck.checked,
+    }),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || !data.success) throw new Error(data.message || `HTTP ${res.status}`);
+}
 
 function mailtoFromForm(f) {
   const { name: n, email: em, message: msg } = f.elements;
@@ -54,10 +82,23 @@ function mailtoFromForm(f) {
   return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
-form.addEventListener('submit', e => {
+form.addEventListener('submit', async e => {
   e.preventDefault();
   if (!form.reportValidity()) return;
-  window.location.href = mailtoFromForm(form);
+  if (!WEB3FORMS_KEY) { window.location.href = mailtoFromForm(form); return; }
+
+  submitBtn.disabled = true;
+  setStatus('Sending…');
+  try {
+    await sendViaWeb3Forms(form);
+    form.reset();
+    setStatus("Thanks, your message is on its way. I'll reply soon.", true);
+  } catch {
+    setStatus('Could not send right now. Opening your email app instead.');
+    window.location.href = mailtoFromForm(form);
+  } finally {
+    submitBtn.disabled = false;
+  }
 });
 
 // Click outside an open panel, or Esc, closes everything

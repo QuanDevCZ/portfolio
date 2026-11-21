@@ -52,8 +52,8 @@
       <div class="about-panel" id="about-panel" aria-hidden="true">
         <div class="about-inner">
           <div class="about-body">
-            <p class="about-lead rv" style="--i:0"><span class="hl">AI builder</span> from Czechia. I turn ideas into apps, websites and tools with <span class="hl">Claude Code</span>, and I ship them.</p>
-            <p class="about-lead rv" style="--i:1">I'm a student. After school I work in my family's restaurant, so I build in <span class="hl">small, finished steps</span>.</p>
+            <p class="about-lead rv" style="--i:0"><span class="hl">High school student</span> from Czechia who builds software with AI. I turn ideas into websites, apps and tools with <span class="hl">Claude Code</span>, and I finish them.</p>
+            <p class="about-lead rv" style="--i:1">I'm also an athlete. I train <span class="hl">ITF taekwondo</span> every day and hold a black belt. I work the same way I train: <span class="hl">steady, focused, on time</span>.</p>
             <p class="about-label rv" style="--i:2">Stack:</p>
             <ul class="about-list">
               <li class="rv" style="--i:3"><span class="hl">Claude Code</span></li>
@@ -61,7 +61,7 @@
               <li class="rv" style="--i:5"><span class="hl">Three.js</span> (3 projects)</li>
               <li class="rv" style="--i:6"><span class="hl">Web Audio</span> (2 projects)</li>
             </ul>
-            <p class="about-lead rv" style="--i:7">Open to <span class="hl">small website and app projects</span>. Based in <span class="hl">Mladá Boleslav, Czechia</span>.</p>
+            <p class="about-lead rv" style="--i:7">Need a website or app for your business? I take on <span class="hl">small projects</span>. Based in <span class="hl">Mladá Boleslav, Czechia</span>.</p>
           </div>
         </div>
       </div>
@@ -71,14 +71,10 @@
     <section class="card reveal">
       <h2 class="h2">Currently building</h2>
       <a class="row" href="https://github.com/QuanDevCZ/cognispace" target="_blank" rel="noopener">
-        <span class="thumb ph"></span>
+        <img class="thumb" src="assets/cognispace.svg" alt="" width="48" height="48">
         <span class="row-body"><span class="row-title">Cognispace</span><span class="row-desc">Planner, focus timer and a 3D map of how modern AI works.</span></span>
         <svg class="icon arrow"><use href="#i-arrow"/></svg>
       </a>
-      <div class="row is-static">
-        <span class="thumb ph"></span>
-        <span class="row-body"><span class="row-title">Jarvis</span><span class="row-desc">A personal AI assistant that runs on my own computer.</span></span>
-      </div>
     </section>
 
     <!-- 6: Recent projects -->
@@ -88,10 +84,10 @@
         <a class="pill" href="https://github.com/QuanDevCZ" target="_blank" rel="noopener">See all</a>
       </div>
       <div class="grid">
-        <a class="card project" href="https://quandevcz.github.io/saunaasia/" target="_blank" rel="noopener"><span class="shot ph"></span><span class="row-title">Sauna Asia</span><span class="row-desc">A new website for my family's restaurant. Menu, sauna and contact.</span></a>
-        <a class="card project" href="https://quandevcz.github.io/elektrolab/" target="_blank" rel="noopener"><span class="shot ph"></span><span class="row-title">Elektrolab</span><span class="row-desc">3D electrostatics app for my physics class, in Czech.</span></a>
-        <a class="card project" href="https://quandevcz.github.io/hand-gesture-instrument/" target="_blank" rel="noopener"><span class="shot ph"></span><span class="row-title">Chord Hands</span><span class="row-desc">Play chords with your hands through the webcam.</span></a>
-        <a class="card project" href="https://quandevcz.github.io/night-racer/" target="_blank" rel="noopener"><span class="shot ph"></span><span class="row-title">Night Racer</span><span class="row-desc">A 3D racing game through a night city, right in the browser.</span></a>
+        <a class="card project" href="https://quandevcz.github.io/saunaasia/" target="_blank" rel="noopener"><img class="shot ph" src="assets/projects/saunaasia.jpg" alt="Sauna Asia website homepage" width="960" height="720" loading="lazy"><span class="row-title">Sauna Asia</span><span class="row-desc">A new website for my family's restaurant. Menu, sauna and contact.</span></a>
+        <a class="card project" href="https://quandevcz.github.io/elektrolab/" target="_blank" rel="noopener"><img class="shot ph" src="assets/projects/elektrolab.jpg" alt="Elektrolab 3D lesson on electric charge" width="960" height="720" loading="lazy"><span class="row-title">Elektrolab</span><span class="row-desc">3D electrostatics app for my physics class, in Czech.</span></a>
+        <a class="card project" href="https://quandevcz.github.io/hand-gesture-instrument/" target="_blank" rel="noopener"><img class="shot ph" src="assets/projects/chord-hands.jpg" alt="Chord Hands start screen" width="800" height="600" loading="lazy"><span class="row-title">Chord Hands</span><span class="row-desc">Play chords with your hands through the webcam.</span></a>
+        <a class="card project" href="https://quandevcz.github.io/night-racer/" target="_blank" rel="noopener"><img class="shot ph" src="assets/projects/night-racer.jpg" alt="Night Racer start screen over a neon city" width="960" height="720" loading="lazy"><span class="row-title">Night Racer</span><span class="row-desc">A 3D racing game through a night city, right in the browser.</span></a>
       </div>
     </section>
 
@@ -105,7 +101,9 @@
           <label>Email<input type="email" name="email" placeholder="you@mail.com" required></label>
         </div>
         <label>Message<textarea name="message" rows="4" placeholder="Tell me about it…" required></textarea></label>
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button class="btn" type="submit">Send message</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>
