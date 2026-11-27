@@ -1,17 +1,37 @@
 :root {
-  --bg: #F6F6F6;
-  --card: #FFFFFF;
-  --ink: #1A1A1A;
-  --muted: #9F9F9F;
-  --line: #E8E8E8;
+  color-scheme: dark;
+  --bg: #0A0A0A;                     /* page */
+  --card: rgba(20, 20, 20, .78);     /* boxes: a little see-through, the map shows behind */
+  --card-solid: #141414;
+  --raise: #1E1E1E;                  /* tiles, hovered rows: one step lighter than a box */
+  --field: #0E0E0E;                  /* inputs: one step darker, reads as inset */
+  --ink: #EDEDED;
+  --on-ink: #0A0A0A;                 /* text on light (ink) buttons */
+  --muted: #8A8A8A;
+  --line: rgba(255, 255, 255, .08);
+  --topo: #9A9A9A;                   /* contour line colour */
   --gap: 12px; /* the one gap: screen edge <-> box, box <-> box (phones) */
-  --ph: #E9E9E9;
+  --ph: #1F1F1F;
   --radius-card: 20px;
   --radius-btn: 14px;
   --ease: cubic-bezier(.2, .8, .2, 1);
   --spring: cubic-bezier(.34, 1.4, .64, 1);
-  --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.06);
+  --shadow: 0 1px 0 rgba(255,255,255,.04) inset, 0 12px 32px rgba(0,0,0,.5);
 }
+
+/* Topo map, fixed behind the whole page */
+.topo-bg {
+  position: fixed; inset: 0; z-index: -1;
+  color: var(--topo);
+  pointer-events: none;
+}
+.topo-bg canvas {
+  display: block; width: 100%; height: 100%;
+  opacity: 0; transition: opacity .8s var(--ease);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, #000 30%, transparent 100%);
+          mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, #000 30%, transparent 100%);
+}
+.topo-bg canvas.is-ready { opacity: 1; }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -53,6 +73,8 @@ a { color: inherit; text-decoration: none; }
 
 .card {
   background: var(--card);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   border: 1px solid var(--line);
   border-radius: var(--radius-card);
   padding: 24px;
@@ -86,7 +108,7 @@ a { color: inherit; text-decoration: none; }
 .tile {
   width: 52px; height: 52px;
   display: grid; place-items: center;
-  background: var(--bg);
+  background: var(--raise);
   color: var(--ink);
   border: 0;
   border-radius: var(--radius-btn);
@@ -94,7 +116,7 @@ a { color: inherit; text-decoration: none; }
   transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease);
 }
 .tile .icon { width: 16px; height: 16px; }
-.tile:hover { transform: translateY(-1px); box-shadow: var(--shadow); background: var(--card); }
+.tile:hover { transform: translateY(-1px); box-shadow: var(--shadow); background: #262626; }
 .tile:active { transform: scale(.96); }
 .tile:focus-visible, .pill:focus-visible, .btn:focus-visible, a:focus-visible {
   outline: 2px solid var(--ink); outline-offset: 2px;
@@ -113,7 +135,7 @@ a { color: inherit; text-decoration: none; }
 .morph .icon { position: absolute; transition: opacity .25s var(--ease), transform .4s var(--spring); }
 .morph .ic-close { opacity: 0; transform: rotate(-90deg) scale(.5); }
 .morph.is-open,
-.morph.is-open:hover { background: var(--ink); color: var(--card); border-radius: 50%; }
+.morph.is-open:hover { background: var(--ink); color: var(--on-ink); border-radius: 50%; }
 .morph.is-open .ic-a { opacity: 0; transform: rotate(90deg) scale(.5); }
 .morph.is-open .ic-close { opacity: 1; transform: none; }
 .morph.anim-open  { animation: morph-pulse .5s var(--ease); }
@@ -198,8 +220,8 @@ a { color: inherit; text-decoration: none; }
   border-radius: 14px;
   transition: background .2s var(--ease);
 }
-.row:hover { background: var(--bg); }
-.thumb { width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0; display: block; }
+.row:hover { background: var(--raise); }
+.thumb { width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0; display: block; box-shadow: 0 0 0 1px var(--line); }
 .row-body { display: flex; flex-direction: column; min-width: 0; }
 .row-title { font-weight: 500; }
 .row-desc { color: var(--muted); font-size: 14px; }
@@ -213,7 +235,7 @@ a { color: inherit; text-decoration: none; }
 }
 .pill {
   font-size: 13px; padding: 6px 12px;
-  background: var(--card); border-radius: 999px;
+  background: var(--card-solid); border: 1px solid var(--line); border-radius: 999px;
   transition: box-shadow .2s var(--ease), transform .2s var(--ease);
 }
 .pill:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
@@ -224,7 +246,7 @@ a { color: inherit; text-decoration: none; }
   transition: transform .25s var(--ease), box-shadow .25s var(--ease);
 }
 .project:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
-.shot { aspect-ratio: 4 / 3; border-radius: 12px; margin-bottom: 12px; display: block; width: 100%; height: auto; object-fit: cover; object-position: top; }
+.shot { aspect-ratio: 4 / 3; border-radius: 12px; margin-bottom: 12px; display: block; box-shadow: 0 0 0 1px var(--line); width: 100%; height: auto; object-fit: cover; object-position: top; }
 .project .row-title, .project .row-desc { padding: 0 4px; }
 
 /* Get in touch */
@@ -234,15 +256,16 @@ a { color: inherit; text-decoration: none; }
 .form label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--muted); }
 .form input, .form textarea {
   font: inherit; font-size: 14px; color: var(--ink);
-  background: var(--bg); border: 1px solid transparent;
+  background: var(--field); border: 1px solid var(--line);
   border-radius: 12px; padding: 12px 14px;
   resize: vertical;
   transition: border-color .2s var(--ease), background .2s var(--ease);
 }
-.form input:focus, .form textarea:focus { outline: none; border-color: var(--line); background: var(--card); }
+.form input::placeholder, .form textarea::placeholder { color: #5A5A5A; }
+.form input:focus, .form textarea:focus { outline: none; border-color: rgba(255,255,255,.22); background: var(--card-solid); }
 .btn {
   font: inherit; font-weight: 500;
-  background: var(--ink); color: var(--card);
+  background: var(--ink); color: var(--on-ink);
   border: 0; border-radius: var(--radius-btn);
   padding: 14px; cursor: pointer;
   transition: transform .2s var(--ease), opacity .2s var(--ease);
@@ -268,7 +291,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: 12px;
   transition: background .2s var(--ease), transform .2s var(--ease);
 }
-.socials a:hover { background: var(--card); transform: translateY(-1px); }
+.socials a:hover { background: var(--raise); transform: translateY(-1px); }
 .foot-small { font-size: 12px; color: var(--muted); }
 .foot-small + .foot-small { margin-top: 4px; }
 

@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quan Nguyen · AI Engineer</title>
   <meta name="description" content="Quan Nguyen builds apps, websites and tools with Claude Code and ships them.">
+  <meta name="theme-color" content="#0A0A0A">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Topo map behind the page (topo-background.js) -->
+  <div class="topo-bg" id="topo-bg" aria-hidden="true"></div>
+
   <!-- Reusable icons -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
@@ -75,6 +79,11 @@
         <span class="row-body"><span class="row-title">Cognispace</span><span class="row-desc">Planner, focus timer and a 3D map of how modern AI works.</span></span>
         <svg class="icon arrow"><use href="#i-arrow"/></svg>
       </a>
+      <a class="row" href="https://github.com/QuanDevCZ/resold-" target="_blank" rel="noopener">
+        <img class="thumb" src="assets/oos.png" alt="" width="48" height="48">
+        <span class="row-body"><span class="row-title">OOS</span><span class="row-desc">Ticket sales tracker. Logs every lot and sale, works out profit per month.</span></span>
+        <svg class="icon arrow"><use href="#i-arrow"/></svg>
+      </a>
     </section>
 
     <!-- 6: Recent projects -->
@@ -122,6 +131,7 @@
     <p class="foot-small">© 2026 Quan Nguyen. All rights reserved.</p>
   </footer>
 
+  <script src="topo-background.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

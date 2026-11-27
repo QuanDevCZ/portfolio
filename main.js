@@ -1,3 +1,16 @@
+// Topo map behind the page. The layer is fixed and click-through, so the
+// cursor is tracked on the window. Elevation labels stay out from under boxes.
+if (window.TopoBackground) {
+  TopoBackground(document.getElementById('topo-bg'), {
+    interval: 0.07,
+    speed: 0.6,
+    seed: 26,
+    labels: true,
+    avoid: '.card, .section-head, .footer',
+    pointerTarget: window,
+  });
+}
+
 // Staggered fade-up on load
 const reveals = document.querySelectorAll('.reveal');
 requestAnimationFrame(() => {
